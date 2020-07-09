@@ -1,0 +1,24 @@
+#!/bin/bash
+NUMBERS="0 5 6"
+NUMBERS="3"
+NUMBERS="3 4 5 6"
+NUMBERS="1"
+NUMBERS="3"
+for number in `echo $NUMBERS`
+do
+  casa --nogui --nologger --log2term -c make_ms_casa_batch.py dummy.MS -70d00m00s $number
+
+# analyze baseline distributions
+  echo 'determining baseline parameters'
+  python determine_max_baseline_values_drao.py dummy.MS 1
+
+
+  python uv_dft_predictor_new.py dummy.MS dummy.MS_max_baselines_values 2 120.0 21 1
+
+  python process_baseline_values.py dummy.MS dummy.MS_max_baselines_values 2 0
+
+  python process_lwimager_ska1.py dummy ska_bda_70_2m_corr_std  $number 1
+#kvis ska_bda_70_2m_corr_div2.fits
+
+done
+
