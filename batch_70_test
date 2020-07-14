@@ -10,7 +10,7 @@ do
 
 # analyze baseline distributions
   echo 'determining baseline parameters'
-  python determine_max_baseline_values_drao.py dummy.MS 1
+  python determine_max_baseline_values.py dummy.MS 1
 
 
   python uv_dft_predictor_new.py dummy.MS dummy.MS_max_baselines_values 2 120.0 21 1
