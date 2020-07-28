@@ -1,0 +1,20 @@
+# a sequence of commands for generating the BDA plots
+
+# fast scripts - natural weighting stuff only take a few seconds
+ python plot_willis_natural.py image_statistics_all_fits natural_willis_dummy21_avg
+ python plot_salvini_natural_32.py salvini_maxbmult_32_statistics natural_salvini_dummy32
+ python plot_salvini_natural_250.py salvini_maxbmult_250_statistics natural_salvini_salvini249_avg
+ python plot_willis_natural_no_avg.py image_statistics_all_fits natural_willis_dummy21_no_avg
+
+ python plot_willis_uniform_no_avg.py image_statistics_all_fits uniform_willis_dummy21_no_avg
+ python plot_salvini_uniform.py salvini_maxbmult_32_statistics uniform_salvini_dummy32
+ python plot_salvini_uniform_250.py salvini_maxbmult_250_statistics uniform_salvini_salvini249_avg
+
+ python plot_willis_uniform.py image_statistics_all_fits uniform_willis_dummy21_avg
+ python plot_willis_uniform_double.py image_statistics_all_fits _uniform_double_
+ python test_diag.py image_statistics_all_fits _uniform_diag_
+ python big_offset.py image_statistics_all_fits _uniform_1632arcmin_integrate221_
+ python plot_willis_uniform_0.007_no_avg.py image_statistics_all_fits _uniform_big_0.14avg_
+ python plot_clean_comps.py image_statistics_all_fits _uniform_zero_
+
+
