@@ -15,11 +15,6 @@ import time
 import matplotlib.pyplot as plt
 import BDA_utility_functions
 
-try:
-   import cPickle as pickle
-except:
-   import pickle
-
 def main(argv):
 
 # set the following variable to True for running under one processor
@@ -144,16 +139,6 @@ def main(argv):
 #     decorBDA2uni[idx, j] = 100.0 * (1.0 -numpy.sum(weight * temp2)/sum_wt) - decorBDA2uni[idx, j]  # differences are at most 0.003 percent!
       decorBDA1uni[idx, j] = 100.0 * (1.0 -numpy.sum(weight * temp1)/sum_wt) 
       decorBDA2uni[idx, j] = 100.0 * (1.0 -numpy.sum(weight * temp2)/sum_wt)
-
-  out_pickle = 'uniform_decorBDA1uni_double_200'
-  outputx = open(out_pickle,'wb')
-  pickle.dump(decorBDA1uni, outputx)
-  outputx.close()
-
-  out_pickle = 'uniform_decorBDA2uni_double_200'
-  outputx = open(out_pickle,'wb')
-  pickle.dump(decorBDA2uni, outputx)
-  outputx.close()
 
   endtime = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
   print("End at %s" % endtime)
