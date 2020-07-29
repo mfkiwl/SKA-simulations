@@ -1,11 +1,9 @@
 #!/bin/bash
-NUMBERS="0 5 6"
-NUMBERS="3"
-NUMBERS="3 4 5 6"
-NUMBERS="1"
-NUMBERS="3"
+NUMBERS="0 1 2 3 4 5 6"
 for number in `echo $NUMBERS`
 do
+  # here, setting DEC to -70 deg. That can be changed to any other declination
+  echo 'generating measurement set'
   casa --nogui --nologger --log2term -c make_ms_casa_batch.py dummy.MS -70d00m00s $number
 
 # analyze baseline distributions

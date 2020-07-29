@@ -1,4 +1,4 @@
-# a sequence of commands for generating the BDA plots
+# a sequence of commands for generating the BDA plots for Figures 3 through 9 discussed in the paper
 
 # fast scripts - natural weighting stuff only take a few seconds
  python plot_willis_natural.py image_statistics_all_fits natural_willis_dummy21_avg
